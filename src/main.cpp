@@ -27,16 +27,17 @@ void loop(void) {
   }
 
   Serial.print("ROM =");
-  for( i = 0; i < 8; i++){
-     if(addr[i] < 10 && addr[i] > 0){
+  for( i = 1; i <= 8; i++){
+     if(addr[8-i] < 10 && addr[8-i] > 0){
       Serial.print(0);
       Keyboard.print(0);
     }
-    sprintf(str,"%x",addr[i]);
+
+    sprintf(str,"%x",addr[8-i]);
     Serial.print(str);
     Keyboard.print(str);
 
-    if(addr[i] == 0){
+    if(addr[8-i] == 0){
       Serial.print(0);
       Keyboard.print(0);
     }
