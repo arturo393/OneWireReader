@@ -28,12 +28,12 @@ void loop(void) {
 
   Serial.print("ROM =");
   for( i = 1; i <= 8; i++){
-     if(addr[8-i] < 10 && addr[8-i] > 0){
-      Serial.print(0);
-      Keyboard.print(0);
-    }
+//     if(addr[8-i] < 10 && addr[8-i] > 0){
+//      Serial.print(0);
+//      Keyboard.print(0);
+//    }
 
-    sprintf(str,"%x",addr[8-i]);
+    sprintf(str,"%02x",addr[8-i]);
     Serial.print(str);
     Keyboard.print(str);
 
